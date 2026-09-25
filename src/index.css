@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-obsidian: #050608;
+    --bg-titanium: rgba(14, 18, 28, 0.72);
+    --border-titanium: rgba(148, 163, 184, 0.12);
+    --spectral-cyan: #22d3ee;
+    --spectral-violet: #a855f7;
+    --spectral-emerald: #10b981;
+    --spectral-rose: #f43f5e;
+  }
+
+  body {
+    background-color: var(--bg-obsidian);
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    color: #e2e8f0;
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: background-color 0.3s ease;
+  }
+
+  body[data-theme="emerald"] {
+    --bg-obsidian: #040907;
+    --spectral-cyan: #34d399;
+    --spectral-violet: #10b981;
+  }
+
+  body[data-theme="crimson"] {
+    --bg-obsidian: #090406;
+    --spectral-cyan: #fb7185;
+    --spectral-violet: #f43f5e;
+  }
+
+  body[data-theme="amber"] {
+    --bg-obsidian: #080603;
+    --spectral-cyan: #fde047;
+    --spectral-violet: #f59e0b;
+  }
+
+  body[data-theme="arctic"] {
+    --bg-obsidian: #03060a;
+    --spectral-cyan: #38bdf8;
+    --spectral-violet: #818cf8;
+  }
+}
+
+.font-orbitron {
+  font-family: 'Orbitron', Impact, sans-serif;
+}
+
+.font-rajdhani {
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.font-tech {
+  font-family: 'Share Tech Mono', ui-monospace, monospace;
+}
+
+/* Titanium Glass Component Styling */
+.titanium-glass {
+  background: linear-gradient(135deg, rgba(16, 21, 36, 0.75) 0%, rgba(8, 11, 20, 0.85) 100%);
+  backdrop-filter: blur(18px) saturate(160%);
+  -webkit-backdrop-filter: blur(18px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.65), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+}
+
+.titanium-glass-glow {
+  background: linear-gradient(135deg, rgba(22, 28, 48, 0.8) 0%, rgba(10, 14, 25, 0.9) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+.titanium-glass-cyan {
+  background: linear-gradient(135deg, rgba(14, 26, 44, 0.8) 0%, rgba(6, 15, 28, 0.9) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(6, 182, 212, 0.28);
+  box-shadow: 0 0 25px rgba(6, 182, 212, 0.15), inset 0 1px 0 0 rgba(255, 255, 255, 0.15);
+}
+
+/* Subtle HUD Geometry & Scan Lines */
+.rhxvm-scanline {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.02),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.02)
+  );
+  background-size: 100% 3px, 3px 100%;
+}
+
+.hud-corner {
+  position: relative;
+}
+.hud-corner::before, .hud-corner::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-color: rgba(168, 85, 247, 0.6);
+  pointer-events: none;
+}
+.hud-corner::before {
+  top: 0; left: 0;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.hud-corner::after {
+  bottom: 0; right: 0;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(5, 6, 8, 0.8);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.5);
+}

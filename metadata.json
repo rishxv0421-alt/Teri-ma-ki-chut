@@ -1,0 +1,6 @@
+{
+  "name": "RHXVM Hyper Core Target Achiever",
+  "description": "Ultra-premium RHXVM analytics, real-time telemetry, fusion validation engine, and target achiever control interface.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
